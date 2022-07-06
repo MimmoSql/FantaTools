@@ -34,6 +34,10 @@ public class Player {
     private int assistsMade;
 
     @Basic
+    @Column(name = "role",nullable = true)
+    private String role;
+
+    @Basic
     @Column(name = "url_img",nullable = true)
     private String urlImg;
 

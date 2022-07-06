@@ -15,6 +15,7 @@ CREATE TABLE player (
     number INTEGER,
     goals_scored INTEGER,
     assists_made INTEGER,
+    role VARCHAR(255),
     url_img VARCHAR(255),
     team VARCHAR(255),
     FOREIGN KEY (team) REFERENCES team (name)

@@ -23,11 +23,11 @@ public class PlayerService {
     }
 
     @Transactional(readOnly = false)
-    public Player addPlayer(Player player) throws PlayerAlreadyExistsException {
+    public void addPlayer(Player player) throws PlayerAlreadyExistsException {
         if(playerRepository.existsByNameAndAndLastName(player.getName(), player.getLastName())){
             throw new PlayerAlreadyExistsException();
         }
-        return playerRepository.save(player);
+        playerRepository.save(player);
     }
 
     @Transactional(readOnly = true)
