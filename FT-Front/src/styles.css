@@ -1,4 +1,111 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body{
+    font-family: 'Shadows Into Light', cursive;
+    background-color: rgb(144, 0, 255);
+    
+}
+
+.buttoncolor{
+    background-color: rgb(255, 255, 255);
+}
+
+.navbar-expand-lg{
+    background-color: rgb(255, 255, 0);
+}
+
+.nav-link{
+    color:rgb(0, 0, 0);
+}
+
+.nav-link:hover{
+    color:rgb(144, 0, 255);
+    transform: scale(1.15);
+}
+
+.nav-link2{
+    color:rgb(0, 0, 0);
+    text-align: center;
+}
+
+.nav-link2:hover{
+    color:rgb(144, 0, 255);
+    transform: scale(1.15);
+}
+
+.loginButton{
+    color:rgb(0, 0, 0);
+    position: absolute;
+    right: 120px;
+}
+
+.trolleyButton{
+    color:rgb(0, 0, 0);
+    position: absolute;
+    right: 20px;
+}
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+.card-image{
+    padding-top: 10px;
+}
+
+.youtube{
+    padding-top: 5%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.social{
+    list-style:square;
+    display: flex;
+    margin: 1rem 0 3rem 0;
+}
+
+.social li{
+    margin:  15px;
+}
+
+.social a i{
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    transition: color .4s ease;
+    margin-right: 2rem;
+}
+
+.social a:hover i{
+    color: rgb(144, 0, 255);
+    transform: scale(1.2);
+}
+
+.footer-bottom{
+    background: rgb(255, 255, 0);
+    padding: 20px 0;
+    text-align: left;
+}
+
+.footer-bottom span{
+    text-transform: uppercase;
+    font-weight: 800;
+    color: rgb(0, 0, 0);
+    padding-left: 2%;
+}
+
+.card{
+    background-color: rgb(200,200,200);
+    width: 18rem;
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
+
+html, body { height: 80%; }
