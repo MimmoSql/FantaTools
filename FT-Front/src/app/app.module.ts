@@ -46,7 +46,9 @@ import { PlayerComponent } from './player/player.component';
     MatSnackBarModule,
     MatDividerModule,
     RouterModule.forRoot([
-      
+      { path: 'home', component: HomeComponent },
+      { path: 'team', component: TeamComponent },
+      { path: 'player', component: PlayerComponent }
     ])
   ],
   providers: [],

@@ -39,7 +39,7 @@ public class PlayerController {
         return new ResponseEntity<List<Player>>(playerService.showByLastName(lastName),HttpStatus.OK);
     }
 
-    @PostMapping("/addPlayer")
+    @PostMapping("/add")
     public ResponseEntity add(@RequestBody @Valid Player player){
         try {
             playerService.addPlayer(player);
