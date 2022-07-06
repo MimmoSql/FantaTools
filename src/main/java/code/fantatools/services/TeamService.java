@@ -22,11 +22,11 @@ public class TeamService {
     }
 
     @Transactional(readOnly = false)
-    public Team addTeam(Team team)throws TeamAlreadyExsistsException {
+    public void addTeam(Team team)throws TeamAlreadyExsistsException {
         if(teamRepository.existsByName(team.getName())){
             throw new TeamAlreadyExsistsException();
         }
-        return teamRepository.save(team);
+        teamRepository.save(team);
     }
 
     @Transactional(readOnly = true)

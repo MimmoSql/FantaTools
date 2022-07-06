@@ -13,7 +13,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Team")
+@RequestMapping("/team")
 public class TeamController {
 
     private final TeamService teamService;
@@ -23,12 +23,12 @@ public class TeamController {
         this.teamService = teamService;
     }
 
-    @GetMapping("/AllTeam")
+    @GetMapping("/allTeam")
     public List<Team> getAll(){
         return teamService.showAll();
     }
 
-    @GetMapping("/ByName")
+    @GetMapping("/byName")
     public ResponseEntity<List<Team>> getByName(@RequestParam String name){
         return new ResponseEntity<List<Team>>(teamService.showByName(name), HttpStatus.OK);
     }
@@ -43,7 +43,7 @@ public class TeamController {
         return new ResponseEntity<>("Team added successfully",HttpStatus.OK);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/delete")
     public ResponseEntity delete(@RequestBody Team team) throws TeamNotExistsException {
         teamService.deleteTeam(team);
         return new ResponseEntity<>("Team deleted successfully",HttpStatus.OK);

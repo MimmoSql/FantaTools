@@ -1,12 +1,14 @@
 package code.fantatools.entities;
 
 import lombok.Data;
-
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "team", schema = "fantaDB")
 public class Team {
@@ -46,4 +48,5 @@ public class Team {
                 ", urlImg='" + urlImg + '\'' +
                 '}';
     }
+
 }

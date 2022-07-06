@@ -29,12 +29,12 @@ public class PlayerController {
         this.playerService = playerService;
     }
 
-    @GetMapping("/ByTeam")
-    public ResponseEntity<List<Player>> getByTeam(@RequestParam Team team){
+    @GetMapping("/byTeam")
+    public ResponseEntity<List<Player>> getByTeam(@RequestBody @Valid Team team){
         return new ResponseEntity<List<Player>>(playerService.showByTeam(team), HttpStatus.OK);
     }
 
-    @GetMapping("/ByLastName")
+    @GetMapping("/byLastName")
     public ResponseEntity<List<Player>> getByLastName(@RequestParam String lastName){
         return new ResponseEntity<List<Player>>(playerService.showByLastName(lastName),HttpStatus.OK);
     }
@@ -49,8 +49,8 @@ public class PlayerController {
         return new ResponseEntity<>("Player added successfully",HttpStatus.OK);
     }
 
-    @DeleteMapping
-    public ResponseEntity delete(@RequestBody Player player) throws PlayerNotExistsException{
+    @DeleteMapping("/delete")
+    public ResponseEntity delete(@RequestBody @Valid Player player) throws PlayerNotExistsException{
         playerService.deletePlayer(player);
         return new ResponseEntity<>("Player deleted successfully",HttpStatus.OK);
     }

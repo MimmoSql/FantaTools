@@ -40,7 +40,7 @@ public class PlayerService {
         return  playerRepository.findByLastName(lastName);
     }
 
-    @Transactional
+    @Transactional(readOnly = false)
     public void deletePlayer(Player player) throws PlayerNotExistsException{
         if(!playerRepository.existsByNameAndAndLastName(player.getName(),player.getLastName())){
             throw new PlayerNotExistsException();
