@@ -2,7 +2,7 @@
 export const ADDRESS_STORE_SERVER = "http://localhost:8080";
 
 //team
-export const REQUEST_TEAM_ALL = "/team/all";
+export const REQUEST_TEAM_ALL = "/team/allTeam";
 export const REQUEST_TEAM_BYNAME = "/team/byName";
 export const REQUEST_TEAM_ADD = "/team/add";
 export const REQUEST_TEAM_DELETE = "/team/delete";

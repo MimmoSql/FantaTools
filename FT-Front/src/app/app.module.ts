@@ -20,6 +20,7 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { TeamComponent } from './team/team.component';
 import { PlayerComponent } from './player/player.component';
+import { TeamCardComponent } from './team-card/team-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { PlayerComponent } from './player/player.component';
     FooTer,
     HomeComponent,
     TeamComponent,
-    PlayerComponent
+    PlayerComponent,
+    TeamCardComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,7 @@ import { PlayerComponent } from './player/player.component';
     MatSnackBarModule,
     MatDividerModule,
     RouterModule.forRoot([
-      { path: 'home', component: HomeComponent },
+      { path: '', component: HomeComponent },
       { path: 'team', component: TeamComponent },
       { path: 'player', component: PlayerComponent }
     ])

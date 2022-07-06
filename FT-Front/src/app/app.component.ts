@@ -16,7 +16,7 @@ export class AppComponent {
   styleUrls: ['./app.component.css']
 })
 export class NavBar {
-  title = 'PSWFrontend';
+  title = 'FT-Front';
 }
 
 @Component({
@@ -25,5 +25,5 @@ export class NavBar {
   styleUrls: ['./app.component.css']
 })
 export class FooTer {
-  title = 'PSWFrontend';
+  title = 'FT-Front';
 }
