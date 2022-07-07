@@ -1,1 +1,9 @@
-<p>team works!</p>
+<section id="teamList">
+    <div class="container">
+        <div *ngIf="searchStatus && searchResultTeam.length > 0">
+            <div class="row">
+                <app-team-card *ngFor="let element of searchResultTeam" [team]='element' class="col-6 col-md-2 card-angular"></app-team-card>
+            </div>
+        </div>
+    </div>
+</section>

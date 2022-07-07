@@ -1,0 +1,14 @@
+.team-card-img{
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.card{
+    height: 80%;
+    background-color: transparent;
+    border: none;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
