@@ -8,4 +8,5 @@ import { Team } from '../model/objects/Team';
 })
 export class TeamCardComponent {
   @Input() team!:Team;
+
 }

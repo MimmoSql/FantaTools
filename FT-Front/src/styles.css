@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 body{
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Montserrat', sans-serif;
     background: linear-gradient(0deg, rgb(192, 110, 255) 0%, rgb(252, 252, 138) 100%);
     min-height: 100vh;
 }

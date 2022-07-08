@@ -3,11 +3,11 @@ import { Team } from "./Team";
 export class Player{
     id! : Number;
     name! : String;
-    lastName! : String;
-    number! : Number;
+    role! : String;
     goalsScored! : Number;
     assistsMade! : Number;
-    role! : String;
-    urlImg! : String;
+    presence! : Number;
+    yellow! : Number;
+    red! : Number;
     team? : Team;
 }

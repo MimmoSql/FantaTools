@@ -28,6 +28,10 @@ public class Team {
     public Team() {
     }
 
+    public Team(String name) {
+        this.name = name;
+    }
+
     public Team(Date foundationYear, String urlImg) {
         this.foundationYear = foundationYear;
         this.urlImg = urlImg;

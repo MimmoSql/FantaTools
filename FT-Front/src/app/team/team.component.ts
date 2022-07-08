@@ -24,7 +24,6 @@ export class TeamComponent  implements OnInit{
   }
 
   searchTeam(){
-    console.log("hello");
     this.stopTeam = true;
     this.model.searchAllTeamRest(
       (status: boolean, response: any)=>{

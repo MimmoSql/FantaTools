@@ -30,13 +30,13 @@ public class PlayerController {
     }
 
     @GetMapping("/byTeam")
-    public ResponseEntity<List<Player>> getByTeam(@RequestBody @Valid Team team){
-        return new ResponseEntity<List<Player>>(playerService.showByTeam(team), HttpStatus.OK);
+    public ResponseEntity<List<Player>> getByTeam(@RequestParam String team){
+        return new ResponseEntity<List<Player>>(playerService.showByTeam(new Team(team)), HttpStatus.OK);
     }
 
     @GetMapping("/byLastName")
-    public ResponseEntity<List<Player>> getByLastName(@RequestParam String lastName){
-        return new ResponseEntity<List<Player>>(playerService.showByLastName(lastName),HttpStatus.OK);
+    public ResponseEntity<List<Player>> getByName(@RequestParam String name){
+        return new ResponseEntity<List<Player>>(playerService.showByName(name),HttpStatus.OK);
     }
 
     @PostMapping("/add")

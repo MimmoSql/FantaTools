@@ -1,0 +1,28 @@
+<section class="margin">
+    <img src="/assets/img/{{teamName.toLowerCase()}}.webp" class="img-responsive" alt="" width="90" height="72" class="d-inline-block align-text-top">    
+    <table class="table table-borderless">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Role</th>
+            <th scope="col">Goal scored</th>
+            <th scope="col">Assist made</th>
+            <th scope="col">Presence</th>
+            <th scope="col">Yellow</th>
+            <th scope="col">Red</th>
+        </tr>
+        </thead>
+
+        <tbody *ngFor="let element of searchResultPlayer">    
+            <tr>
+                <th scope="row">{{element.name}}</th>
+                <td>{{element.role}}</td>
+                <td>{{element.goalsScored}}</td>
+                <td>{{element.assistsMade}}</td>
+                <td>{{element.presence}}</td>
+                <td>{{element.yellow}}</td>
+                <td>{{element.red}}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>

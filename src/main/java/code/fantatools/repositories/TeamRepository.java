@@ -10,6 +10,6 @@ import java.util.List;
 public interface TeamRepository extends JpaRepository<Team,String> {
 
     List<Team> findAll();
-    List<Team> findByName(String name);
+    Team findByName(String name);
     boolean existsByName(String name);
 }

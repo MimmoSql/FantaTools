@@ -21,6 +21,7 @@ import { HomeComponent } from './home/home.component';
 import { TeamComponent } from './team/team.component';
 import { PlayerComponent } from './player/player.component';
 import { TeamCardComponent } from './team-card/team-card.component';
+import { TeamPlayerComponent } from './team-player/team-player.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { TeamCardComponent } from './team-card/team-card.component';
     HomeComponent,
     TeamComponent,
     PlayerComponent,
-    TeamCardComponent
+    TeamCardComponent,
+    TeamPlayerComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,8 @@ import { TeamCardComponent } from './team-card/team-card.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'team', component: TeamComponent },
-      { path: 'player', component: PlayerComponent }
+      { path: 'player', component: PlayerComponent },
+      {path: 'Allplayer', component: TeamPlayerComponent}
     ])
   ],
   providers: [],

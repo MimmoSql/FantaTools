@@ -29,8 +29,8 @@ public class TeamController {
     }
 
     @GetMapping("/byName")
-    public ResponseEntity<List<Team>> getByName(@RequestParam String name){
-        return new ResponseEntity<List<Team>>(teamService.showByName(name), HttpStatus.OK);
+    public Team getByName(@RequestParam String name){
+        return teamService.showByName(name);
     }
 
     @PostMapping("/addTeam")

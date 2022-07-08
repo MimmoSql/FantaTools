@@ -18,12 +18,8 @@ public class Player {
     private String name;
 
     @Basic
-    @Column(name = "last_name", nullable = true)
-    private String lastName;
-
-    @Basic
-    @Column(name = "number", nullable = true)
-    private int number;
+    @Column(name = "role",nullable = true)
+    private String role;
 
     @Basic
     @Column(name = "goals_scored", nullable = false)
@@ -34,12 +30,16 @@ public class Player {
     private int assistsMade;
 
     @Basic
-    @Column(name = "role",nullable = true)
-    private String role;
+    @Column(name = "presence",nullable = true)
+    private int presence;
 
     @Basic
-    @Column(name = "url_img",nullable = true)
-    private String urlImg;
+    @Column(name = "yellow", nullable = false)
+    private int yellow;
+
+    @Basic
+    @Column(name = "red", nullable = false)
+    private int red;
 
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "team")
@@ -48,24 +48,26 @@ public class Player {
     public Player() {
     }
 
-    public Player(String name, String lastName, int number, int goalsScored, int assistsMade, String urlImg, Team team) {
+    public Player(String name, String role, int goalsScored, int assistsMade, int presence, int yellow, int red, Team team) {
         this.name = name;
-        this.lastName = lastName;
-        this.number = number;
+        this.role = role;
         this.goalsScored = goalsScored;
         this.assistsMade = assistsMade;
-        this.urlImg = urlImg;
+        this.presence = presence;
+        this.yellow = yellow;
+        this.red = red;
         this.team = team;
     }
 
-    public Player(Integer id, String name, String lastName, int number, int goalsScored, int assistsMade, String urlImg, Team team) {
+    public Player(Integer id, String name, String role, int goalsScored, int assistsMade, int presence, int yellow, int red, Team team) {
         this.id = id;
         this.name = name;
-        this.lastName = lastName;
-        this.number = number;
+        this.role = role;
         this.goalsScored = goalsScored;
         this.assistsMade = assistsMade;
-        this.urlImg = urlImg;
+        this.presence = presence;
+        this.yellow = yellow;
+        this.red = red;
         this.team = team;
     }
 
@@ -74,11 +76,12 @@ public class Player {
         return "Player{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", LastName='" + lastName + '\'' +
-                ", Number=" + number +
-                ", GoalsScored=" + goalsScored +
-                ", AssistsMade=" + assistsMade +
-                ", urlImg='" + urlImg + '\'' +
+                ", role='" + role + '\'' +
+                ", goalsScored=" + goalsScored +
+                ", assistsMade=" + assistsMade +
+                ", presence=" + presence +
+                ", yellow=" + yellow +
+                ", red=" + red +
                 ", team=" + team +
                 '}';
     }

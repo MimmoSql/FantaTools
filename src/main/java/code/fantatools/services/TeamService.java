@@ -35,7 +35,7 @@ public class TeamService {
     }
 
     @Transactional(readOnly = true)
-    public List<Team> showByName(String name){
+    public Team showByName(String name){
         return teamRepository.findByName(name);
     }
 

@@ -11,12 +11,12 @@ CREATE TABLE team(
 CREATE TABLE player (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255),
-    last_name VARCHAR(255),
-    number INTEGER,
+    role VARCHAR(255),
     goals_scored INTEGER,
     assists_made INTEGER,
-    role VARCHAR(255),
-    url_img VARCHAR(255),
+    presence INTEGER,
+    yellow INTEGER,
+    red INTEGER,
     team VARCHAR(255),
     FOREIGN KEY (team) REFERENCES team (name)
 );

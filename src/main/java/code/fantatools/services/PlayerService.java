@@ -17,6 +17,7 @@ public class PlayerService {
 
     private final PlayerRepository playerRepository;
 
+
     @Autowired
     public PlayerService(PlayerRepository playerRepository){
         this.playerRepository = playerRepository;
@@ -24,7 +25,7 @@ public class PlayerService {
 
     @Transactional(readOnly = false)
     public void addPlayer(Player player) throws PlayerAlreadyExistsException {
-        if(playerRepository.existsByNameAndAndLastName(player.getName(), player.getLastName())){
+        if(playerRepository.existsByName(player.getName())){
             throw new PlayerAlreadyExistsException();
         }
         playerRepository.save(player);
@@ -36,13 +37,13 @@ public class PlayerService {
     }
 
     @Transactional(readOnly = true)
-    public List<Player> showByLastName(String lastName){
-        return  playerRepository.findByLastName(lastName);
+    public List<Player> showByName(String name){
+        return  playerRepository.findByName(name);
     }
 
     @Transactional(readOnly = false)
     public void deletePlayer(Player player) throws PlayerNotExistsException{
-        if(!playerRepository.existsByNameAndAndLastName(player.getName(),player.getLastName())){
+        if(!playerRepository.existsByName(player.getName())){
             throw new PlayerNotExistsException();
         }
         playerRepository.delete(player);

@@ -11,13 +11,10 @@ import java.util.List;
 @Repository
 public interface PlayerRepository extends JpaRepository<Player, Integer> {
 
-    List<Player> findByLastName(String name);
+    List<Player> findByName(String name);
 
     List<Player> findByTeam(Team team);
 
-
-    boolean existsByNameAndAndLastName(String name,String lastName);
-
-
+    boolean existsByName(String name);
 
 }
