@@ -1,6 +1,6 @@
-import { AppComponent,NavBar, FooTer } from './app.component';
+import { AppComponent, FooTer } from './app.component';
 
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
@@ -22,16 +22,39 @@ import { TeamComponent } from './team/team.component';
 import { PlayerComponent } from './player/player.component';
 import { TeamCardComponent } from './team-card/team-card.component';
 import { TeamPlayerComponent } from './team-player/team-player.component';
+import { AppRoutingModule } from './app-routing.module';
+import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+import { NavbarComponent } from './navbar/navbar.component';
+
+
+export function initializeKeycloak(keycloak: KeycloakService): () => Promise<boolean> {
+  return () =>
+      keycloak.init({
+          config: {
+              url: 'http://localhost:8080',
+              realm: 'angular-web',
+              clientId: 'angular-web-client',
+          },
+          initOptions: {
+          
+            onLoad: 'check-sso',
+            silentCheckSsoRedirectUri:
+              window.location.origin + '/assets/verify-sso.html'
+          }
+      });
+}
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    NavBar,
     FooTer,
     HomeComponent,
     TeamComponent,
     PlayerComponent,
     TeamCardComponent,
-    TeamPlayerComponent
+    TeamPlayerComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,14 +72,24 @@ import { TeamPlayerComponent } from './team-player/team-player.component';
     MatToolbarModule,
     MatSnackBarModule,
     MatDividerModule,
+    KeycloakAngularModule,
+    AppRoutingModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
+      { path: 'home', component: HomeComponent},
       { path: 'team', component: TeamComponent },
       { path: 'player', component: PlayerComponent },
-      {path: 'Allplayer', component: TeamPlayerComponent}
+      { path: 'Allplayer', component: TeamPlayerComponent }
     ])
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeKeycloak,
+      multi: true,
+      deps: [KeycloakService],
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

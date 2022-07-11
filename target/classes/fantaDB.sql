@@ -18,6 +18,12 @@ CREATE TABLE player (
     yellow INTEGER,
     red INTEGER,
     team VARCHAR(255),
-    FOREIGN KEY (team) REFERENCES team (name)
+    fanta_team integer,
+    FOREIGN KEY (team) REFERENCES team (name),
+    FOREIGN KEY (fanta_team) REFERENCES player (id)
 );
 
+CREATE TABLE user(
+    username VARCHAR(255) PRIMARY KEY,
+    password VARCHAR(255)
+);

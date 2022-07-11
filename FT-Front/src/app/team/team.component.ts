@@ -15,6 +15,9 @@ export class TeamComponent  implements OnInit{
   searchStatus = true;
   model: FtServiceService;
 
+  oldSearchStatus = false;
+  oldSearchResult!: Team[];
+
   constructor(model:FtServiceService) {
     this.model=model;
   }
@@ -22,6 +25,15 @@ export class TeamComponent  implements OnInit{
   ngOnInit(): void {
     this.searchTeam();
   }
+  /*
+  oldSearchTeam(){
+    this.model.searchAllTeam().subscribe({
+      next: (response: Team[]) => {
+        this.oldSearchStatus = true;
+        this.oldSearchResult.;
+      }
+    });
+  }*/
 
   searchTeam(){
     this.stopTeam = true;

@@ -45,6 +45,11 @@ public class Player {
     @JoinColumn(name = "team")
     private Team team;
 
+    @ManyToOne
+    @JoinColumn(name = "fanta_team")
+    private Player players;
+
+
     public Player() {
     }
 

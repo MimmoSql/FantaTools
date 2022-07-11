@@ -18,7 +18,10 @@
           <li class="nav-item">
             <h2><a class="nav-link" routerLink="team">Team</a></h2>
           </li>
-  
+          
+          <button id="logout-btn" type="button" class="btn btn-outline-warning" (click)="stopSession()">Log out</button>
+          <button id="login-btn" type="button" class="btn btn-outline-warning" (click)="startSession()">Log in</button>
+
         </ul>
       </div>
     </div>

@@ -11,15 +11,6 @@ export class AppComponent {
 
 
 @Component({
-  selector: 'nav-bar',
-  templateUrl: './app.navbar.html',
-  styleUrls: ['./app.component.css']
-})
-export class NavBar {
-  title = 'FT-Front';
-}
-
-@Component({
   selector: 'foo-ter',
   templateUrl: './app.footer.html',
   styleUrls: ['./app.component.css']

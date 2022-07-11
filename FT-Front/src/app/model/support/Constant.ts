@@ -1,5 +1,5 @@
 //server
-export const ADDRESS_STORE_SERVER = "http://localhost:8080";
+export const ADDRESS_STORE_SERVER = "http://localhost:8081";
 
 //team
 export const REQUEST_TEAM_ALL = "/team/allTeam";
@@ -11,3 +11,5 @@ export const REQUEST_PLAYER_BYTEAM = "/player/byTeam";
 export const REQUEST_PLAYER_BYLASTNAME = "/player/byLastName";
 export const REQUEST_PLAYER_ADD = "/player/add";
 export const REQUEST_PLAYER_DELETE = "/player/delete";
+//login
+export const DO_LOGIN ="/l/login";
