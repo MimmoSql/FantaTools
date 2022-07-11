@@ -3,6 +3,7 @@ package code.fantatools.controllers;
 
 import code.fantatools.entities.Player;
 import code.fantatools.entities.Team;
+import code.fantatools.entities.UserTeam;
 import code.fantatools.repositories.PlayerRepository;
 import code.fantatools.services.PlayerService;
 import code.fantatools.support.exceptions.PlayerAlreadyExistsException;

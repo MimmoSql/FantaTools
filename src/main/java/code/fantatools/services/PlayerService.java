@@ -3,6 +3,7 @@ package code.fantatools.services;
 
 import code.fantatools.entities.Player;
 import code.fantatools.entities.Team;
+import code.fantatools.entities.UserTeam;
 import code.fantatools.repositories.PlayerRepository;
 import code.fantatools.support.exceptions.PlayerAlreadyExistsException;
 import code.fantatools.support.exceptions.PlayerNotExistsException;
@@ -16,7 +17,6 @@ import java.util.List;
 public class PlayerService {
 
     private final PlayerRepository playerRepository;
-
 
     @Autowired
     public PlayerService(PlayerRepository playerRepository){
@@ -35,6 +35,7 @@ public class PlayerService {
     public List<Player> showByTeam(Team team){
         return playerRepository.findByTeam(team);
     }
+
 
     @Transactional(readOnly = true)
     public List<Player> showByName(String name){

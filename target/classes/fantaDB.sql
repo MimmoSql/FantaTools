@@ -8,6 +8,7 @@ CREATE TABLE team(
     url_img VARCHAR(255)
 );
 
+
 CREATE TABLE player (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255),
@@ -18,12 +19,24 @@ CREATE TABLE player (
     yellow INTEGER,
     red INTEGER,
     team VARCHAR(255),
-    fanta_team integer,
+    user_team VARCHAR(255),
     FOREIGN KEY (team) REFERENCES team (name),
-    FOREIGN KEY (fanta_team) REFERENCES player (id)
+    foreign key (user_team) REFERENCES user_team (name)
 );
 
 CREATE TABLE user(
-    username VARCHAR(255) PRIMARY KEY,
-    password VARCHAR(255)
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    last_name VARCHAR(255),
+    email VARCHAR(255),
+    password VARCHAR(255),
+    user_team VARCHAR(255)
+);
+
+CREATE TABLE user_team(
+    team_id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    user_id INTEGER,
+    player_id INTEGER,
+    foreign key (user_id) REFERENCES user(id),
+    foreign key (player_id) references player(id)
 );

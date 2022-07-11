@@ -87,3 +87,9 @@ a{
     margin-top: 1rem;
     margin-right: 4rem;
 }
+
+.btn{
+    color:rgb(0, 0, 0);
+    position: absolute;
+    right: 20px;
+}

@@ -2,6 +2,7 @@ package code.fantatools.repositories;
 
 import code.fantatools.entities.Player;
 import code.fantatools.entities.Team;
+import code.fantatools.entities.UserTeam;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -14,6 +15,7 @@ public interface PlayerRepository extends JpaRepository<Player, Integer> {
     List<Player> findByName(String name);
 
     List<Player> findByTeam(Team team);
+
 
     boolean existsByName(String name);
 

@@ -11,5 +11,5 @@ export const REQUEST_PLAYER_BYTEAM = "/player/byTeam";
 export const REQUEST_PLAYER_BYLASTNAME = "/player/byLastName";
 export const REQUEST_PLAYER_ADD = "/player/add";
 export const REQUEST_PLAYER_DELETE = "/player/delete";
-//login
-export const DO_LOGIN ="/l/login";
+//user
+export const ADD_USER = "/user/add"
