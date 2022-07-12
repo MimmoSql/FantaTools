@@ -25,5 +25,17 @@ public class UserService {
             throw new UserAlreadyExistsException();
     }
 
+    @Transactional(readOnly = true)
+    public User getUser(String email){
+        return userRepository.findByEmail(email);
+    }
+
+    @Transactional(readOnly = false)
+    public User setNameTeam(String email,String name){
+        User u = userRepository.findByEmail(email);
+        u.setUserTeam(name);
+        userRepository.saveAndFlush(u);
+        return u;
+    }
 
 }

@@ -12,4 +12,9 @@ export const REQUEST_PLAYER_BYLASTNAME = "/player/byLastName";
 export const REQUEST_PLAYER_ADD = "/player/add";
 export const REQUEST_PLAYER_DELETE = "/player/delete";
 //user
-export const ADD_USER = "/user/add"
+export const ADD_USER = "/user/add";
+export const SHOW_USER = "/user/showUser";
+export const ADD_TEAM = "/user/addTeam";
+
+//user team
+export const SHOW_USER_PLAYER = "/userTeam/showPLayer";

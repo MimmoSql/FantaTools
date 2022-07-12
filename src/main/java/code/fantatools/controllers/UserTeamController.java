@@ -24,7 +24,7 @@ public class UserTeamController {
     }
 
     @GetMapping("/showPLayer")
-    public List<Player> showPlayer(String username){
+    public List<String> showPlayer(@RequestParam String username){
         return userTeamService.showPlayer(username);
     }
 

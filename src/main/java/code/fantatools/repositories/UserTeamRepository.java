@@ -21,5 +21,5 @@ public interface UserTeamRepository extends JpaRepository<UserTeam,Integer> {
     @Query(value = "SELECT  p.name " +
             "FROM Player as p, UserTeam as us, User as u " +
             "WHERE us.player.id = p.id and us.user.id = u.id and u.username = :username")
-    List<Player> findPlayer(@Param("username")String username);
+    List<String> findPlayer(@Param("username")String username);
 }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Team } from './model/objects/Team';
-import { ADDRESS_STORE_SERVER,REQUEST_TEAM_ALL,REQUEST_TEAM_BYNAME,REQUEST_TEAM_ADD,REQUEST_TEAM_DELETE,REQUEST_PLAYER_BYTEAM, ADD_USER } from './model/support/Constant';
+import { ADDRESS_STORE_SERVER,REQUEST_TEAM_ALL,REQUEST_TEAM_BYNAME,REQUEST_TEAM_ADD,REQUEST_TEAM_DELETE,REQUEST_PLAYER_BYTEAM, ADD_USER, SHOW_USER, SHOW_USER_PLAYER, ADD_TEAM } from './model/support/Constant';
 import { RestManager } from './model/managers/RestManager';
 import { User } from './model/objects/User';
 import { KeycloakProfile } from 'keycloak-js';
@@ -70,5 +70,22 @@ export class FtServiceService {
    
    this.http.post(ADDRESS_STORE_SERVER+ADD_USER, body, {headers: myheader}).subscribe();
   }
+
+  public showUser(email:String,callback: any){
+    this.restManager.makeGetRequest(ADDRESS_STORE_SERVER,SHOW_USER,{email:email},callback);
+  }
+
+  public showUserPlayer(username:String,callback: any){
+    this.restManager.makeGetRequest(ADDRESS_STORE_SERVER,SHOW_USER_PLAYER,{username:username},callback);
+  }
+
+  public createTeam(email: string, nameTeam : string){
+    const myheader = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded'); 
+    let body = new HttpParams();
+    body = body.set("email",email);
+    body = body.set("name",nameTeam);
+    this.http.post(ADDRESS_STORE_SERVER+ADD_TEAM,body,{headers:myheader}).subscribe();
+  }
+
 
 }

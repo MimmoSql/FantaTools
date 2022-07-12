@@ -25,15 +25,6 @@ export class TeamComponent  implements OnInit{
   ngOnInit(): void {
     this.searchTeam();
   }
-  /*
-  oldSearchTeam(){
-    this.model.searchAllTeam().subscribe({
-      next: (response: Team[]) => {
-        this.oldSearchStatus = true;
-        this.oldSearchResult.;
-      }
-    });
-  }*/
 
   searchTeam(){
     this.stopTeam = true;

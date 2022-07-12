@@ -1,1 +1,10 @@
-<p>fanta-team works!</p>
+<body>
+    <section>    
+        <div *ngIf="asTeam">La tua squdra</div>
+        <button (click)="mostra()">mostra</button>
+            <div *ngFor="let element of result2">
+                {{element}}
+            </div>
+    </section>
+    <div *ngIf="!asTeam">creala</div>
+</body>

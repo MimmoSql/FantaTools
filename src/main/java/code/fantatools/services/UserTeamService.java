@@ -28,7 +28,7 @@ public class UserTeamService {
     public UserTeam showBYPlayer(Player player){ return userTeamRepository.findByPlayer(player);}
 
     @Transactional(readOnly = true)
-    public List<Player> showPlayer(String username){
+    public List<String> showPlayer(String username){
         return userTeamRepository.findPlayer(username);
     }
 

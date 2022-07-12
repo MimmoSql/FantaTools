@@ -25,7 +25,13 @@
                   </div>
                   <div class="col-6 mb-3">
                       <h6>Team Name</h6>
-                      <p class="text-muted">Team Name FC</p>
+                      <div *ngIf="teamName != null">  
+                        <p class="text-muted">{{teamName}}</p>
+                      </div>
+                      <div *ngIf="teamName == null">  
+                        <input [formControl]="nameTController" type="text" id="nameT" name="nameT">
+                        <button (click)="setTema()">Crea</button>
+                      </div>
                   </div>
                 </div>
               </div>
