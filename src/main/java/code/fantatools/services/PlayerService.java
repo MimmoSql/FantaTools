@@ -38,7 +38,7 @@ public class PlayerService {
 
 
     @Transactional(readOnly = true)
-    public List<Player> showByName(String name){
+    public Player showByName(String name){
         return  playerRepository.findByName(name);
     }
 

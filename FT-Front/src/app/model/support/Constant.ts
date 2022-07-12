@@ -18,3 +18,5 @@ export const ADD_TEAM = "/user/addTeam";
 
 //user team
 export const SHOW_USER_PLAYER = "/userTeam/showPLayer";
+export const ADD_PLAYER = "/userTeam/create";
+export const REMOVE_PLAYER = "/userTeam/delete"

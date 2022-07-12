@@ -12,6 +12,7 @@ import { FtServiceService } from '../ft-service.service';
 })
 export class NavbarComponent implements OnInit {
   public isLogin = false;
+  public isAdmin = false;
   public userProfile : KeycloakProfile | null = null;
   public model:FtServiceService
   constructor(private readonly keycloak: KeycloakService, private route : Router, model : FtServiceService) {
@@ -28,6 +29,7 @@ export class NavbarComponent implements OnInit {
 
     if (this.isLogin) {
       this.userProfile = await this.keycloak.loadUserProfile();
+      this.Admin();
 
       (document.getElementById("logout-btn") as HTMLButtonElement).removeAttribute('hidden');
       (document.getElementById("login-btn") as HTMLButtonElement).setAttribute('hidden', '');
@@ -53,5 +55,12 @@ export class NavbarComponent implements OnInit {
 
   public stopSession(){
     this.keycloak.logout();
+  }
+
+  public Admin(){
+    let roles = this.keycloak.getUserRoles();
+    if(roles.includes("admin")){
+      this.isAdmin = true;
+    }
   }
 }

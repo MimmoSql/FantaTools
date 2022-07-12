@@ -4,7 +4,12 @@
         <button (click)="mostra()">mostra</button>
             <div *ngFor="let element of result2">
                 {{element}}
+                <button (click)="idPlayer(element)">-</button>
             </div>
     </section>
-    <div *ngIf="!asTeam">creala</div>
+    <div *ngIf="!asTeam">Crea la tua squadra
+        <a> Vai al tuo profile e dai un nome alla tua squdra!</a>
+        <h1><a href="profile">FantaTeam</a></h1>
+    </div>
+
 </body>

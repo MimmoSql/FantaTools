@@ -27,6 +27,7 @@ import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { FantaTeamComponent } from './fanta-team/fanta-team.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 export function initializeKeycloak(keycloak: KeycloakService): () => Promise<boolean> {
@@ -59,6 +60,7 @@ export function initializeKeycloak(keycloak: KeycloakService): () => Promise<boo
     NavbarComponent,
     UserProfileComponent,
     FantaTeamComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,7 +87,8 @@ export function initializeKeycloak(keycloak: KeycloakService): () => Promise<boo
       { path: 'player', component: PlayerComponent },
       { path: 'Allplayer', component: TeamPlayerComponent },
       { path: 'profile', component : UserProfileComponent},
-      { path: 'fantaTeam', component: FantaTeamComponent}
+      { path: 'fantaTeam', component: FantaTeamComponent},
+      { path: 'admin', component : AdminComponent}
     ])
   ],
   providers: [

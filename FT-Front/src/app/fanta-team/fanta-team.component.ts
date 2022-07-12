@@ -22,6 +22,11 @@ export class FantaTeamComponent implements OnInit {
   searchStatus2 = true;
   asTeam = false;
 
+  public p : Player = new Player();
+  s: boolean = true;
+  public playerId!: number;
+  public id! : number;
+
   constructor(private readonly keycloak: KeycloakService, private route : Router,model:FtServiceService){
     this.model = model;
   }
@@ -46,19 +51,33 @@ export class FantaTeamComponent implements OnInit {
       }
     }
 
+    idPlayer(name : String){
+      this.model.searchByName(name,this.showResult.bind(this));
+      
+      this.delete(this.p.id as number);
+    }
+
+    showResult(status : boolean, response:Player){
+      this.s = status;
+      if(status){
+        this.p = response as Player;
+      }
+
+    }
+
+    delete(playerId: number){
+      this.model.removePLayer(this.result.id,playerId);
+    }
 
 
     mostra(){
       this.model.showUserPlayer(this.result.username as string, this.showPlayer.bind(this))
-      console.log(this.result2.length+ "AJOPOOOOOO")
     }
 
     showPlayer(status:boolean, response:any){
       this.searchStatus2 = status;
-      console.log("cioa")
       if(true){
         this.result2 = response as String[];
-        console.log("wee"+this.result2.forEach(Element => console.log(Element)))
       }
     }
 }

@@ -17,6 +17,10 @@ public interface UserTeamRepository extends JpaRepository<UserTeam,Integer> {
 
     UserTeam findByPlayer(Player player);
 
+    UserTeam findUserTeamByUserAndPlayer(User user,Player player);
+
+    boolean existsByUserAndPlayer(User user, Player player);
+
 
     @Query(value = "SELECT  p.name " +
             "FROM Player as p, UserTeam as us, User as u " +

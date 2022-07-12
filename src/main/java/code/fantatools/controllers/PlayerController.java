@@ -36,8 +36,8 @@ public class PlayerController {
     }
 
     @GetMapping("/byLastName")
-    public ResponseEntity<List<Player>> getByName(@RequestParam String name){
-        return new ResponseEntity<List<Player>>(playerService.showByName(name),HttpStatus.OK);
+    public ResponseEntity<Player> getByName(@RequestParam String name){
+        return new ResponseEntity<Player>(playerService.showByName(name),HttpStatus.OK);
     }
 
     @PostMapping("/add")

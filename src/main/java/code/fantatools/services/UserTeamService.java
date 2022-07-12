@@ -5,6 +5,7 @@ import code.fantatools.entities.User;
 import code.fantatools.entities.UserTeam;
 import code.fantatools.repositories.UserTeamRepository;
 import code.fantatools.support.exceptions.TeamAlreadyExsistsException;
+import code.fantatools.support.exceptions.TeamNotExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,7 +35,14 @@ public class UserTeamService {
 
     @Transactional(readOnly = false)
     public void addUserTeam(UserTeam userTeam) throws TeamAlreadyExsistsException {
+        if(userTeamRepository.existsByUserAndPlayer(userTeam.getUser(),userTeam.getPlayer()))
+            throw new TeamAlreadyExsistsException();
         userTeamRepository.save(userTeam);
+    }
+
+    @Transactional(readOnly = false)
+    public void remove(UserTeam userTeam)throws TeamNotExistsException {
+        userTeamRepository.delete(userTeam);
     }
 
 

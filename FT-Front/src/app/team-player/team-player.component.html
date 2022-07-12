@@ -10,6 +10,7 @@
             <th scope="col">Presence</th>
             <th scope="col">Yellow</th>
             <th scope="col">Red</th>
+            <th scope="col">Aggiugi</th>
         </tr>
         </thead>
 
@@ -22,6 +23,7 @@
                 <td>{{element.presence}}</td>
                 <td>{{element.yellow}}</td>
                 <td>{{element.red}}</td>
+                <td><button (click)="addPlayer(element.id)">+</button></td>
             </tr>
         </tbody>
     </table>

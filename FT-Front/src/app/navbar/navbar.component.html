@@ -26,6 +26,9 @@
           <li *ngIf="isLogin" class="nav-item">
             <h2><a class="nav-link" routerLink="fantaTeam">FantaTeam</a></h2>
           </li>
+          <li *ngIf="isAdmin" class="nav-item">
+            <h2><a class="nav-link" routerLink="admin">Admin</a></h2>
+          </li>
 
 
           <button id="logout-btn" type="button" class="btn btn-outline-warning" (click)="stopSession()">Log out</button>
