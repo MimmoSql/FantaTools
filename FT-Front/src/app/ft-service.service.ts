@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Team } from './model/objects/Team';
-import { ADDRESS_STORE_SERVER,REQUEST_TEAM_ALL,REQUEST_TEAM_BYNAME,REQUEST_TEAM_ADD,REQUEST_TEAM_DELETE,REQUEST_PLAYER_BYTEAM,REQUEST_PLAYER_BYLASTNAME, ADD_USER, SHOW_USER, SHOW_USER_PLAYER, ADD_TEAM, ADD_PLAYER, REMOVE_PLAYER } from './model/support/Constant';
+import { ADDRESS_STORE_SERVER,REQUEST_TEAM_ALL,REQUEST_TEAM_BYNAME,REQUEST_TEAM_ADD,REQUEST_TEAM_DELETE,REQUEST_PLAYER_BYTEAM,REQUEST_PLAYER_BYLASTNAME, ADD_USER, SHOW_USER, SHOW_USER_PLAYER, ADD_TEAM, ADD_PLAYER, REMOVE_PLAYER, REQUEST_PLAYER_ADD, REQUEST_PLAYER_DELETE } from './model/support/Constant';
 import { RestManager } from './model/managers/RestManager';
 import { User } from './model/objects/User';
 import { KeycloakProfile } from 'keycloak-js';
+import { Player } from './model/objects/Player';
 
 
 @Injectable({
@@ -65,6 +66,40 @@ export class FtServiceService {
    
    this.http.post(ADDRESS_STORE_SERVER+ADD_USER, body, {headers: myheader}).subscribe();
   }
+
+  public createPlayer(player : Player){
+    const myheader = new HttpHeaders().set('Content-Type', 'application/json');
+    let p= new Player();
+    p.name = player.name as string;
+    p.role = player.role as String;
+    p.goalsScored = player.goalsScored as number;
+    p.assistsMade = player.assistsMade as number;
+    p.presence = player.presence as number;
+    p.yellow = player.yellow as number;
+    p.red = player.red as number;
+    p.team = player.team;
+    let body = JSON.stringify(p);
+   
+   this.http.post(ADDRESS_STORE_SERVER+REQUEST_PLAYER_ADD, body, {headers: myheader}).subscribe();
+  }
+
+
+  public deletePlayer(player : Player){
+    const myheader = new HttpHeaders().set('Content-Type', 'application/json');
+    let p= new Player();
+    p.name = player.name as string;
+    p.role = player.role as String;
+    p.goalsScored = player.goalsScored as number;
+    p.assistsMade = player.assistsMade as number;
+    p.presence = player.presence as number;
+    p.yellow = player.yellow as number;
+    p.red = player.red as number;
+    p.team = player.team;
+    let body = JSON.stringify(p);
+   
+   this.http.post(ADDRESS_STORE_SERVER+REQUEST_PLAYER_DELETE, body, {headers: myheader}).subscribe();
+  }
+
 
   public showUser(email:String,callback: any){
     this.restManager.makeGetRequest(ADDRESS_STORE_SERVER,SHOW_USER,{email:email},callback);

@@ -50,7 +50,7 @@ public class PlayerController {
         return new ResponseEntity<>("Player added successfully",HttpStatus.OK);
     }
 
-    @DeleteMapping("/delete")
+    @PostMapping("/delete")
     public ResponseEntity delete(@RequestBody @Valid Player player) throws PlayerNotExistsException{
         playerService.deletePlayer(player);
         return new ResponseEntity<>("Player deleted successfully",HttpStatus.OK);

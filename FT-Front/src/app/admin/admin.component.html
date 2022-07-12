@@ -1,3 +1,14 @@
-<body>
-    
+<body class="margin">
+    <p>nome</p><input [formControl]="controllerName" type="text" id="name" name="name">
+    <p>ruolo</p><input [formControl]="controllerRole" type="text" id="role" name="role">
+    <p>goal</p><input [formControl]="controllerGoal" type="number" id="goal" name="goal">
+    <p>assist</p><input [formControl]="controllerAssist" type="number" id="assist" name="assist">
+    <p>presenze</p><input [formControl]="controllerPres" type="number" id="pres" name="pres">
+    <p>gialli</p><input [formControl]="controllerYellow" type="number" id="yellow" name="yellow">
+    <p>rossi</p><input [formControl]="controllerRed" type="number" id="red" name="red">
+    <p>squadra</p><input [formControl]="controllerT" type="text" id="team" name="team">
+    <br><br>
+    <button (click)="creaPlayer()">Crea</button>
+    <br><br>
+    <button (click)="eliminaPlayer()">Elimina</button>
 </body>
