@@ -47,7 +47,9 @@ public class PlayerService {
         if(!playerRepository.existsByName(player.getName())){
             throw new PlayerNotExistsException();
         }
-        playerRepository.delete(player);
+        Player p = playerRepository.findByName(player.getName());
+        playerRepository.delete(p);
+        System.out.println("CI SIAMO");
     }
 
 }

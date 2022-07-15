@@ -81,6 +81,7 @@ export class FtServiceService {
     let body = JSON.stringify(p);
    
    this.http.post(ADDRESS_STORE_SERVER+REQUEST_PLAYER_ADD, body, {headers: myheader}).subscribe();
+   alert("giocatore aggiunto");
   }
 
 
@@ -98,6 +99,7 @@ export class FtServiceService {
     let body = JSON.stringify(p);
    
    this.http.post(ADDRESS_STORE_SERVER+REQUEST_PLAYER_DELETE, body, {headers: myheader}).subscribe();
+   alert("giocatore rimosso");
   }
 
 
@@ -115,6 +117,7 @@ export class FtServiceService {
     body = body.set("email",email);
     body = body.set("name",nameTeam);
     this.http.post(ADDRESS_STORE_SERVER+ADD_TEAM,body,{headers:myheader}).subscribe();
+    alert("squadra creata");
   }
 
   public addPlayer(userId: number, playerid:number){
@@ -123,6 +126,7 @@ export class FtServiceService {
     body = body.set("user",userId);
     body = body.set("player",playerid);
     this.http.post(ADDRESS_STORE_SERVER+ADD_PLAYER,body,{headers:myheader}).subscribe();
+    alert("giocatore aggiunto");
   }
 
   public removePLayer(userId: number, playerid:number){
@@ -131,5 +135,6 @@ export class FtServiceService {
     body = body.set("user",userId);
     body = body.set("player",playerid);
     this.http.post(ADDRESS_STORE_SERVER+REMOVE_PLAYER,body,{headers:myheader}).subscribe();
+    alert("giocatore rimosso");
   }
 }
