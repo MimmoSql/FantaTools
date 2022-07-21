@@ -22,6 +22,7 @@ public interface UserTeamRepository extends JpaRepository<UserTeam,Integer> {
     boolean existsByUserAndPlayer(User user, Player player);
 
 
+
     @Query(value = "SELECT  p.name " +
             "FROM Player as p, UserTeam as us, User as u " +
             "WHERE us.player.id = p.id and us.user.id = u.id and u.username = :username")

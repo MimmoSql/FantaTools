@@ -49,7 +49,6 @@ public class PlayerService {
         }
         Player p = playerRepository.findByName(player.getName());
         playerRepository.delete(p);
-        System.out.println("CI SIAMO");
     }
 
 }
