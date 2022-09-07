@@ -64,7 +64,7 @@ export class FtServiceService {
     user.username = userProfile?.username as string;
     let body = JSON.stringify(user);
    
-   this.http.post(ADDRESS_STORE_SERVER+ADD_USER, body, {headers: myheader}).subscribe();
+    this.http.post(ADDRESS_STORE_SERVER+ADD_USER, body, {headers: myheader}).subscribe();
   }
 
   public createPlayer(player : Player){
